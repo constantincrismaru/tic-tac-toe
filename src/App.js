@@ -1,0 +1,25 @@
+import Play from './components/play'
+import Results from './components/results'
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
+import './App.scss';
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <div>
+          <div>
+            <NavLink className="app-link" exact={true} activeClassName='active-link' to='/play'>Play</NavLink>
+            <NavLink className="app-link" activeClassName='active-link' to='/results'>Results</NavLink>
+          </div>
+          <Switch>
+            <Route path="/play" component={Play} />
+            <Route path="/results" component={Results} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
